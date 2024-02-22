@@ -1,24 +1,24 @@
 # Cryptography---19CS412-classical-techqniques
-# Echoserver
-Echo server and client using python socket
+# Caeser Cipher
+Caeser Cipher using with different key values
 
 # AIM:
 
-To develop a simple webserver to serve html programming pages.
+To develop a simple C program to implement Caeser Cipher.
 
 ## DESIGN STEPS:
 
 ### Step 1:
 
-Design of echo server and client using python socket
+Design of Caeser Cipher algorithnm 
 
 ### Step 2:
 
-Implementation using Python code
+Implementation using C or pyhton code
 
 ### Step 3:
 
-Testing the server and client 
+Testing algorithm with different key values. 
 
 ## PROGRAM:
 
