@@ -32,6 +32,7 @@ Implementation using C or pyhton code
 ## PROGRAM:
 PROGRAM:
 CaearCipher.
+```
 #include <stdio.h>
 #include <stdlib.h>
  
@@ -67,9 +68,10 @@ scanf("%d", &key); // Read the key from the user
 caesarDecrypt(message, key); printf("Decrypted Message: %s", message); return 0;
 }
 
-
+```
 ## OUTPUT:
-OUTPUT:
+![ceaser](https://github.com/user-attachments/assets/5d24093a-4c64-4a17-9813-7425c390fa85)
+
 Simulating Caesar Cipher
 
 
@@ -103,22 +105,20 @@ Implementation using C or pyhton code
 
 Testing algorithm with different key values. 
 
-ALGORITHM DESCRIPTION:
-The Playfair cipher uses a 5 by 5 table containing a key word or phrase. To generate the key table, first fill the spaces in the table with the letters of the keyword, then fill the remaining spaces with the rest of the letters of the alphabet in order (usually omitting "Q" to reduce the alphabet to fit; other versions put both "I" and "J" in the same space). The key can be written in the top rows of the table, from left to right, or in some other pattern, such as a spiral beginning in the upper-left-hand corner and ending in the centre.
-The keyword together with the conventions for filling in the 5 by 5 table constitutes the cipher key. To encrypt a message, one would break the message into digrams (groups of 2 letters) such that, for example, "HelloWorld" becomes "HE LL OW OR LD", and map them out on the key table. Then apply the following 4 rules, to each pair of letters in the plaintext:
-1.	If both letters are the same (or only one letter is left), add an "X" after the first letter. Encrypt the new pair and continue. Some   
+### ALGORITHM DESCRIPTION:
+  #### The Playfair cipher uses a 5 by 5 table containing a key word or phrase. To generate the key table, first fill the spaces in the table with the letters of the keyword, then fill the remaining spaces with the rest of the letters of the alphabet in order (usually omitting "Q" to reduce the alphabet to fit; other versions put both "I" and "J" in the same space). The key can be written in the top rows of the table, from left to right, or in some other pattern, such as a spiral beginning in the upper-left-hand corner and ending in the centre.
+#### The keyword together with the conventions for filling in the 5 by 5 table constitutes the cipher key. To encrypt a message, one would break the message into digrams (groups of 2 letters) such that, for example, "HelloWorld" becomes "HE LL OW OR LD", and map them out on the key table. Then apply the following 4 rules, to each pair of letters in the plaintext:
+#### 1.	If both letters are the same (or only one letter is left), add an "X" after the first letter. Encrypt the new pair and continue. Some   
    variants of Playfair use "Q" instead of "X", but any letter, itself uncommon as a repeated pair, will do.
-2.	If the letters appear on the same row of your table, replace them with the letters to their immediate right respectively (wrapping 
+#### 2.	If the letters appear on the same row of your table, replace them with the letters to their immediate right respectively (wrapping 
    around to the left side of the row if a letter in the original pair was on the right side of the row).
-3.	If the letters appear on the same column of your table, replace them with the letters immediately below respectively (wrapping around 
+#### 3.	If the letters appear on the same column of your table, replace them with the letters immediately below respectively (wrapping around 
    to the top side of the column if a letter in the original pair was on the bottom side of the column).
-4.	If the letters are not on the same row or column, replace them with the letters on the same row respectively but at the other pair of 
-   corners of the rectangle defined by the original pair. The order is important – the first letter of the encrypted pair is the one that 
-    lies on the same row as the first letter of the plaintext pair.
-To decrypt, use the INVERSE (opposite) of the last 3 rules, and the 1st as-is (dropping any extra "X"s, or "Q"s that do not make sense in the final message when finished).
+#### 4.	If the letters are not on the same row or column, replace them with the letters on the same row respectively but at the other pair of corners of the rectangle defined by the original pair. The order is important – the first letter of the encrypted pair is the one that lies on the same row as the first letter of the plaintext pair.To decrypt, use the INVERSE (opposite) of the last 3 rules, and the 1st as-is (dropping any extra "X"s, or "Q"s that do not make sense in the final message when finished).
 
 
 ## PROGRAM:
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -274,10 +274,13 @@ printf("Cipher text: %s\n", str);
 
 return 0;
 }
+```
 
 ## OUTPUT:
-Output:
-Key text: Monarchy Plain text: instruments Cipher text: gatlmzclrqtx
+#### Key text: Monarchy Plain text: instruments Cipher text: gatlmzclrqtx
+
+![playfair](https://github.com/user-attachments/assets/1da5cd17-3e18-4b6f-9241-24703ce82b13)
+
 
 ## RESULT:
 The program is executed successfully
@@ -305,7 +308,7 @@ Implementation using C or pyhton code
 ### Step 3:
 
 Testing algorithm with different key values. 
-ALGORITHM DESCRIPTION:
+#### ALGORITHM DESCRIPTION:
 The Hill cipher is a substitution cipher invented by Lester S. Hill in 1929. Each letter is represented by a number modulo 26. To encrypt a message, each block of n letters is multiplied by an invertible n × n matrix, again modulus 26.
 To decrypt the message, each block is multiplied by the inverse of the matrix used for encryption. The matrix used for encryption is the cipher key, and it should be chosen randomly from the set of invertible n × n matrices (modulo 26).
 The cipher can, be adapted to an alphabet with any number of letters. All arithmetic just needs to be done modulo the number of letters instead of modulo 26.
@@ -313,6 +316,7 @@ The cipher can, be adapted to an alphabet with any number of letters. All arithm
 
 ## PROGRAM:
 PROGRAM:
+```
 #include <stdio.h> #include <string.h>
 int keymat[3][3] = { { 1, 2, 1 }, { 2, 3, 2 }, { 2, 2, 1 } };
 int invkeymat[3][3] = { { -1, 0, 1 }, { 2, -1, 0 }, { -2, 2, -1 } }; char key[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -357,15 +361,18 @@ strcat(dec, decode(a, b, c));
 }
 printf("Decoded message : %s\n", dec); return 0;
 }
-
+```
 
 ## OUTPUT:
-OUTPUT:
-Simulating Hill Cipher
+#### Simulating Hill Cipher
+#### Input Message : SecurityLaboratory
+#### Padded Message : SECURITYLABORATORY Encrypted Message : EACSDKLCAEFQDUKSXU Decrypted Message : SECURITYLABORATORY
+![Hill](https://github.com/user-attachments/assets/86591610-3971-46c7-bc76-0750e87400e7)
 
 
-Input Message : SecurityLaboratory
-Padded Message : SECURITYLABORATORY Encrypted Message : EACSDKLCAEFQDUKSXU Decrypted Message : SECURITYLABORATORY
+
+
+
 ## RESULT:
 The program is executed successfully
 
@@ -398,6 +405,7 @@ The Vigenere cipher is a method of encrypting alphabetic text by using a series 
 
 ## PROGRAM:
 PROGRAM:
+```
 #include<stdio.h> #include<string.h>
 //FunctiontoperformVigenereencryption voidvigenereEncrypt(char*text,constchar*key){ inttextLen= strlen(text);
 intkeyLen=strlen(key); for(inti =0;i< textLen;i++){ charc =text[i]; if(c>='A'&&c<='Z'){
@@ -427,15 +435,13 @@ constchar *key="KEY";//Replacewithyourdesired key
 char message[]= "Thisisasecretmessage.";//Replace withyourmessage
 //Encrypt themessage vigenereEncrypt(message,key); printf("EncryptedMessage:%s\n",message);
 //Decrypt themessage backtotheoriginal vigenereDecrypt(message,key); printf("DecryptedMessage:%s\n",message); Return 0;
-
+```
 ## OUTPUT:
-OUTPUT :
+#### Simulating Vigenere Cipher
+#### Input Message : SecurityLaboratory
+#### Encrypted Message : NMIYEMKCNIQVVROWXC Decrypted Message : SECURITYLABORATORY
+![vingene](https://github.com/user-attachments/assets/d6c85ecf-f7af-444e-a737-29607382fb4a)
 
-Simulating Vigenere Cipher
-
-
-Input Message : SecurityLaboratory
-Encrypted Message : NMIYEMKCNIQVVROWXC Decrypted Message : SECURITYLABORATORY
 ## RESULT:
 The program is executed successfully
 
@@ -465,7 +471,7 @@ ALGORITHM DESCRIPTION:
 In the rail fence cipher, the plaintext is written downwards and diagonally on successive "rails" of an imaginary fence, then moving up when we reach the bottom rail. When we reach the top rail, the message is written downwards again until the whole plaintext is written out. The message is then read off in rows.
 
 ## PROGRAM:
-
+```
 PROGRAM:
 #include<stdio.h> #include<string.h> #include<stdlib.h> main()
 {
@@ -512,10 +518,13 @@ if(code[i][j]!=0) printf("%c",code[i][j]);
 }
 printf("\n");
 }
+```
 ## OUTPUT:
-OUTPUT:
-Enter a Secret Message wearediscovered
-Enter number of rails 2
-waeicvrderdsoee
+#### Enter a Secret Message wearediscovered
+#### Enter number of rails 2
+#### waeicvrderdsoee
+![Railfence](https://github.com/user-attachments/assets/504995fc-0bc3-4b2c-a539-55d55e03fc89)
+
+
 ## RESULT:
 The program is executed successfully
